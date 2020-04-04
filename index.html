@@ -101,34 +101,46 @@
          document.getElementById(priseId).innerText = prise * document.getElementById(inputId).value;
       };
 
+
       
-      function subTotal(mobilePrise, casePrise){
+      function subTotal(mobilePrise, casePrise, subtotal){
          const subtotalPrise = parseFloat(document.getElementById(mobilePrise).innerText) + parseFloat(document.getElementById(casePrise).innerText);
          document.getElementById("subtotal").innerText = subtotalPrise;
+
+         // 5% tax
+         const Tax = (subtotalPrise * 5) / 100;
+         document.getElementById("tax").innerText = Tax;
+
+         // total
+         document.getElementById("total").innerText = subtotalPrise + Tax;
+
       };
 
 
-
+         // 5% tax for 1 piece
+      subTotal("mobile-prise", "case-prise", "subtotal"); 
+         
+      
 
       document.getElementById("mobileMinus-button").addEventListener("click", function(){
          minusClick("input-mobile", "mobile-prise", 1219);
-         subTotal("mobile-prise", "case-prise");
+         subTotal("mobile-prise", "case-prise", "subtotal");
 
       });
 
       document.getElementById("mobilePlus-button").addEventListener("click", function(){
          plusClick("input-mobile", "mobile-prise", 1219);
-         subTotal("mobile-prise", "case-prise");
+         subTotal("mobile-prise", "case-prise", "subtotal");
       });
 
       document.getElementById("caseMinus-button").addEventListener("click", function(){
          minusClick("input-case", "case-prise", 59);
-         subTotal("mobile-prise", "case-prise");
+         subTotal("mobile-prise", "case-prise", "subtotal");
       });
 
       document.getElementById("casePlus-button").addEventListener("click", function(){
          plusClick("input-case", "case-prise", 59);
-         subTotal("mobile-prise", "case-prise");
+         subTotal("mobile-prise", "case-prise", "subtotal");
       });
      
 
