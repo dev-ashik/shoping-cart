@@ -53,3 +53,15 @@ body{
 	background-color: #2FBE70;
 	border: none;
 }
+
+#secund-page{
+	display: none;
+}
+#check{
+	color: #418002;
+}
+#small{
+	text-align: right;
+	color: hotpink;
+};
+
